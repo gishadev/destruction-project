@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gisha.Destruction
+namespace Gisha.Destruction.Infrastructure
 {
     public class GameEnterPoint : MonoBehaviour
     {

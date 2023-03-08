@@ -1,9 +1,12 @@
 using Zenject;
 
-public class GlobalMonoInstaller : MonoInstaller
+namespace Gisha.Destruction.Infrastructure
 {
-    public override void InstallBindings()
+    public class GlobalMonoInstaller : MonoInstaller
     {
-        SignalBusInstaller.Install(Container);
+        public override void InstallBindings()
+        {
+            SignalBusInstaller.Install(Container);
+        }
     }
 }
