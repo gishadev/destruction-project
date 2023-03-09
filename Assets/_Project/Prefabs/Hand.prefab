@@ -932,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  animationSpeed: 0.5
+  animationSpeed: 5
 --- !u!1 &7499378870578941605
 GameObject:
   m_ObjectHideFlags: 0
