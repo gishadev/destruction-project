@@ -10,7 +10,6 @@ namespace Gisha.Destruction.Game.XR
         [Header("Raycast")] [SerializeField] private Transform fwdVector;
         [SerializeField] private float raycastRadius = 0.35f;
         [SerializeField] private float raycastDst = 5f;
-        [SerializeField] private XRBaseInteractor xrTeleportationInteractor;
 
 
         private List<IXRInteractable> _validTargets = new List<IXRInteractable>();
@@ -32,13 +31,7 @@ namespace Gisha.Destruction.Game.XR
         {
             _selectedObject = null;
             targets.Clear();
-
-            if (xrTeleportationInteractor != null && xrTeleportationInteractor.hasHover)
-            {
-                HideCursor();
-                return;
-            }
-
+            
             var ray = new Ray(fwdVector.position, fwdVector.forward);
 
             if (Physics.SphereCast(ray, raycastRadius, out var hitInfo, raycastDst))
