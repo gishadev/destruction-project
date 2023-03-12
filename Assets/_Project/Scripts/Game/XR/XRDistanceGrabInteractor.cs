@@ -31,12 +31,13 @@ namespace Gisha.Destruction.Game.XR
         {
             _selectedObject = null;
             targets.Clear();
-            
+
             var ray = new Ray(fwdVector.position, fwdVector.forward);
 
             if (Physics.SphereCast(ray, raycastRadius, out var hitInfo, raycastDst))
             {
-                if (hitInfo.collider != null && hitInfo.collider.TryGetComponent(out XRBaseInteractable interactable))
+                var interactable = hitInfo.collider.GetComponentInParent<XRBaseInteractable>();
+                if (hitInfo.collider != null && interactable != null)
                 {
                     if ((interactable.interactionLayers & interactionLayers) != 0 && !interactable.isSelected)
                     {
